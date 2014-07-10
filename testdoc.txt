@@ -1,2 +1,2 @@
 Initial document details test changed 1.5 changes done.//my changes are valid
-New line added from remote repo.
+New line added from remote repo line 2 from remote rep.

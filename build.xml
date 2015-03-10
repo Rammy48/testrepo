@@ -1,0 +1,23 @@
+<project name="MCPMS Salesforce Build Tasks"  default="deployCode" xmlns:sf="antlib:com.salesforce">
+
+    <property file="build.properties"/>
+    <property environment="env"/>
+
+	   <!-- retrieve contents  -->
+	   <target name="retrieveCode">
+      <sf:retrieve username="${sf.username}" password="${sf.password}" 
+	             serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" 
+				 retrieveTarget="${sf.deploymentRoot}" unpackaged="${sf.deploymentRoot}/src/package.xml"/>
+    </target>
+    <!--deploy  code -->
+    <target name="deployCode">
+      <!-- deploy the contents -->
+      <sf:deploy username="${sf.username}" password="${sf.password}" 
+	             serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" 
+				 deployRoot="${sf.deploymentRoot}/src"/>
+    </target>
+ <target name="testecho">
+     <echo>TEST ECHO MESSAGE </echo>
+    </target>
+  
+</project>
